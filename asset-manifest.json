@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Leveraged-Simulator/static/css/main.22941023.css",
+    "main.js": "/Leveraged-Simulator/static/js/main.33290e65.js",
+    "index.html": "/Leveraged-Simulator/index.html",
+    "main.22941023.css.map": "/Leveraged-Simulator/static/css/main.22941023.css.map",
+    "main.33290e65.js.map": "/Leveraged-Simulator/static/js/main.33290e65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22941023.css",
+    "static/js/main.33290e65.js"
+  ]
+}
