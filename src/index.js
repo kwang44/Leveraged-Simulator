@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import "./index.css";
+import yahooFinance from "yahoo-finance";
 
 class Square extends React.Component {
   render() {
@@ -12,13 +13,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   componentDidMount() {
-    axios
-      .get(
-        "https://api.nasdaq.com/api/quote/SPY/historical?assetclass=etf&fromdate=1990-01-01&limit=9999&todate=2022-01-30"
-      )
-      .then((data) => {
-        console.log(data);
-      });
+    console.log("oops");
   }
 
   renderSquare(i) {
