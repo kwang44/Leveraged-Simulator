@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import axios from "axios";
 import "./index.css";
-import yahooFinance from "yahoo-finance";
 
 class Square extends React.Component {
   render() {
