@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Leveraged-Simulator/static/css/main.22941023.css",
-    "main.js": "/Leveraged-Simulator/static/js/main.a37de1eb.js",
+    "main.css": "/Leveraged-Simulator/static/css/main.31d6cfe0.css",
+    "main.js": "/Leveraged-Simulator/static/js/main.68acd7a2.js",
+    "static/media/HistoricalData_1644379671904.csv": "/Leveraged-Simulator/static/media/HistoricalData_1644379671904.38759236da0df1b8bd0c.csv",
     "index.html": "/Leveraged-Simulator/index.html",
-    "main.22941023.css.map": "/Leveraged-Simulator/static/css/main.22941023.css.map",
-    "main.a37de1eb.js.map": "/Leveraged-Simulator/static/js/main.a37de1eb.js.map"
+    "main.68acd7a2.js.map": "/Leveraged-Simulator/static/js/main.68acd7a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.22941023.css",
-    "static/js/main.a37de1eb.js"
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.68acd7a2.js"
   ]
 }
