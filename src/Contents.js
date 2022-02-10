@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import ReactApexChart from "react-apexcharts";
 import { parse } from "papaparse";
 import spy_history from "./HistoricalData_1644452737372.csv";
+import example_csv from "./example.csv";
 
 class Contents extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class Contents extends React.Component {
     var csv = parse(csvString, {
       header: true,
       skipEmptyLines: true,
+      transformHeader: (h) => h.trim(),
     }).data;
 
     var dates = [];
@@ -120,7 +122,54 @@ class Contents extends React.Component {
           onChange={(e) => this.handleFile(e)}
         ></input>
         <p>This application take in csv file from Nasdaq site</p>
-        <h6>How to use:</h6>
+        <h2>How to use:</h2>
+        <ol>
+          <li>
+            Find the ETF/Stock historical data on the Nasdaq website. Ex:{" "}
+            <a
+              href="https://www.nasdaq.com/market-activity/funds-and-etfs/dgro/historical"
+              target="_blank"
+            >
+              DGRO
+            </a>{" "}
+            <a
+              href="https://www.nasdaq.com/market-activity/funds-and-etfs/schd/historical"
+              target="_blank"
+            >
+              SCHD
+            </a>{" "}
+            <a
+              href="https://www.nasdaq.com/market-activity/funds-and-etfs/jepi/historical"
+              target="_blank"
+            >
+              JEPI
+            </a>
+          </li>
+          <li>
+            Select the timespan you want: <b>1M 6M YTD 1Y 5Y MAX</b>
+          </li>
+          <li>
+            Click <b>DOWNLOAD DATA</b>
+          </li>
+          <li>Upload the csv file using the button above</li>
+        </ol>
+        <p>Notes:</p>
+        <ul>
+          <li>This doesn't account for dividends.</li>
+          <li>This doesn't account for fees</li>
+          <li>This may not be accurate</li>
+          <li>
+            You can make your own csv. As long as it has <b>Date</b> and{" "}
+            <b>Close/Last</b> columns, this should work. Ex:{" "}
+            <a href={example_csv} download="example.csv">
+              csv
+            </a>
+          </li>
+          <li>
+            Because the order of Nasdaq's csv is ordered from latest to oldest,
+            this application read the csv from bottom up.
+          </li>
+        </ul>
         <a href="https://github.com/kwang44/Leveraged-Simulator">Source Code</a>
       </div>
     );
