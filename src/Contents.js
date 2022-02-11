@@ -62,7 +62,7 @@ class Contents extends React.Component {
     for (var i = csv.length - 1; i >= 0; i--) {
       let data = csv[i];
       dates.push(data["Date"].trim());
-      let close = parseFloat(data["Close/Last"]);
+      let close = parseFloat(data["Close/Last"].replace(/[^0-9\.]/g, ""));
       if (x1.length === 0) {
         x1.push(10000.0);
         x2.push(10000.0);
