@@ -71,7 +71,7 @@ class Contents extends React.Component {
         let rate = (close - prev) / close;
         x1.push(x1[x1.length - 1] * (1 + rate));
         x2.push(x2[x2.length - 1] * (1 + 2 * rate));
-        x3.push(x3[x3.length - 1] * (1 + 3 * rate).toFixed(50));
+        x3.push(x3[x3.length - 1] * (1 + 3 * rate));
       }
       prev = close;
     }
