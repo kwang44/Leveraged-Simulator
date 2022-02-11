@@ -22,10 +22,16 @@ class Contents extends React.Component {
             fontWeight: "bold",
           },
         },
+        xaxis: {
+          categories: [],
+        },
+        yaxis: {
+          labels: {
+            formatter: (val, index) => val.toFixed(2),
+          },
+        },
       },
-      xaxis: {
-        categories: [],
-      },
+
       series: [
         {
           name: "1x",
@@ -55,7 +61,7 @@ class Contents extends React.Component {
     var prev;
     for (var i = csv.length - 1; i >= 0; i--) {
       let data = csv[i];
-      dates.push(data["Date"]);
+      dates.push(data["Date"].trim());
       let close = parseFloat(data["Close/Last"]);
       if (x1.length === 0) {
         x1.push(10000.0);
@@ -65,7 +71,7 @@ class Contents extends React.Component {
         let rate = (close - prev) / close;
         x1.push(x1[x1.length - 1] * (1 + rate));
         x2.push(x2[x2.length - 1] * (1 + 2 * rate));
-        x3.push(x3[x3.length - 1] * (1 + 3 * rate));
+        x3.push(x3[x3.length - 1] * (1 + 3 * rate).toFixed(50));
       }
       prev = close;
     }
@@ -155,6 +161,7 @@ class Contents extends React.Component {
         </ol>
         <p>Notes:</p>
         <ul>
+          <li>Line start at 10000</li>
           <li>This doesn't account for dividends.</li>
           <li>This doesn't account for fees</li>
           <li>This may not be accurate</li>
@@ -169,6 +176,7 @@ class Contents extends React.Component {
             Because the order of Nasdaq's csv is ordered from latest to oldest,
             this application read the csv from bottom up.
           </li>
+          <li>Large file can cause this to become slow.</li>
         </ul>
         <a href="https://github.com/kwang44/Leveraged-Simulator">Source Code</a>
       </div>
