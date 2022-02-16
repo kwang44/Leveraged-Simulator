@@ -176,6 +176,7 @@ class Contents extends React.Component {
             Because the order of Nasdaq's csv is ordered from latest to oldest,
             this application read the csv from bottom up.
           </li>
+          <li>Nasdaq only show datas for past 10 years max.</li>
           <li>Large file can cause this to become slow.</li>
         </ul>
         <a href="https://github.com/kwang44/Leveraged-Simulator">Source Code</a>
